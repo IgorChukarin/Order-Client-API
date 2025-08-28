@@ -1,6 +1,6 @@
-package com.example.Repository;
+package com.example.rest.orderClientAPI.Repository;
 
-import com.example.model.Client;
+import com.example.rest.orderClientAPI.model.Client;
 
 import java.util.List;
 import java.util.Optional;

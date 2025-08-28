@@ -1,4 +1,4 @@
-package com.example.model;
+package com.example.rest.orderClientAPI.model;
 
 import lombok.Data;
 

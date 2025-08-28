@@ -1,10 +1,11 @@
-package com.example.Repository.impl;
+package com.example.rest.orderClientAPI.Repository.impl;
 
-import com.example.Repository.ClientRepository;
-import com.example.Repository.OrderRepository;
-import com.example.model.Client;
-import com.example.model.Order;
-import org.springframework.beans.BeanUtils;
+import com.example.rest.orderClientAPI.Repository.ClientRepository;
+import com.example.rest.orderClientAPI.Repository.OrderRepository;
+import com.example.rest.orderClientAPI.exception.EntityNotFoundException;
+import com.example.rest.orderClientAPI.model.Client;
+import com.example.rest.orderClientAPI.model.Order;
+import com.example.rest.orderClientAPI.utils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -60,7 +61,7 @@ public class InMemoryClientRepository implements ClientRepository {
     @Override
     public void deleteById(Long id) {
         Client client = repository.get(id);
-        if (currentClient == null) {
+        if (client == null) {
             throw new EntityNotFoundException(MessageFormat.format("Client with id {0} not found!", id));
         }
 
